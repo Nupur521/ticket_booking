@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 
@@ -19,8 +20,7 @@
         <div class="pickAMovie">
             Pick A Movie:
             <span >
-                <select value="" class="input_box">
-                    <option></option>
+                <select value="" class="input_box" id="selectMovie">
                     <option>SpiderMan Home-Coming</option>
                     <option>83</option>
                     <option>Atrangi</option>
@@ -38,103 +38,106 @@
 
         <!-- seating arrangement of theatre -->
         <div class="seatsSelection d-flex flex-column">
-            <div class="platinum_seats d-flex flex-column">
+            <div class="platinum_seats d-flex flex-column ">
                 <div class="plt-row-1 d-flex flex-row mt-4 seat_row">
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
+                    <div class="seat col-9 p-1-c-1" ></div>
+                    <div class="seat col-9 p-1-c-2"></div>
+                    <div class="seat col-9 p-1-c-3"></div>
+                    <div class="seat col-9 p-1-c-4"></div>
+                    <div class="seat col-9 p-1-c-5"></div>
+                    <div class="seat col-9 p-1-c-6"></div>
+                    <div class="seat col-9 p-1-c-7"></div>
+                    <div class="seat col-9 p-1-c-8"></div>
+                    <div class="seat col-9 p-1-c-9"></div>
                 </div>
 
                 <div class="plt-row-2 d-flex flex-row mt-1 seat_row">
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
+                    <div class="seat col-9 p-2-c-1"></div>
+                    <div class="seat col-9 p-2-c-2"></div>
+                    <div class="seat col-9 p-2-c-3"></div>
+                    <div class="seat col-9 p-2-c-4"></div>
+                    <div class="seat col-9 p-2-c-5"></div>
+                    <div class="seat col-9 p-2-c-6"></div>
+                    <div class="seat col-9 p-2-c-7"></div>
+                    <div class="seat col-9 p-2-c-8"></div>
+                    <div class="seat col-9 p-2-c-9"></div>
                 </div>
                 <div class="plt-row-3 d-flex flex-row mt-1 seat_row">
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
+                    <div class="seat col-9 p-3-c-1"></div>
+                    <div class="seat col-9 p-3-c-2"></div>
+                    <div class="seat col-9 p-3-c-3"></div>
+                    <div class="seat col-9 p-3-c-4"></div>
+                    <div class="seat col-9 p-3-c-5"></div>
+                    <div class="seat col-9 p-3-c-6"></div>
+                    <div class="seat col-9 p-3-c-7"></div>
+                    <div class="seat col-9 p-3-c-8"></div>
+                    <div class="seat col-9 p-3-c-9"></div>
                 </div>
             </div>
             <div class="gold_seats d-flex flex-column mt-3">
                 <div class="seat_row d-flex flex-row gld-row-1">
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
+                    <div class="seat col-9 g-1-c-1"></div>
+                    <div class="seat col-9 g-1-c-2"></div>
+                    <div class="seat col-9 g-1-c-3"></div>
+                    <div class="seat col-9 g-1-c-4"></div>
+                    <div class="seat col-9 g-1-c-5"></div>
+                    <div class="seat col-9 g-1-c-6"></div>
+                    <div class="seat col-9 g-1-c-7"></div>
+                    <div class="seat col-9 g-1-c-8"></div>
+                    <div class="seat col-9 g-1-c-9"></div>
                 </div>
                 <div class="seat_row d-flex flex-row gld-row-2 mt-1">
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
+                    <div class="seat col-9 g-2-c-1"></div>
+                    <div class="seat col-9 g-2-c-2"></div>
+                    <div class="seat col-9 g-2-c-3"></div>
+                    <div class="seat col-9 g-2-c-4"></div>
+                    <div class="seat col-9 g-2-c-5"></div>
+                    <div class="seat col-9 g-2-c-6"></div>
+                    <div class="seat col-9 g-2-c-7"></div>
+                    <div class="seat col-9 g-2-c-8"></div>
+                    <div class="seat col-9 g-2-c-9"></div>
                 </div>
                 <div class="seat_row d-flex flex-row gld-row-3 mt-1">
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
+                    <div class="seat col-9 g-3-c-1"></div>
+                    <div class="seat col-9 g-3-c-2"></div>
+                    <div class="seat col-9 g-3-c-3"></div>
+                    <div class="seat col-9 g-3-c-4"></div>
+                    <div class="seat col-9 g-3-c-5"></div>
+                    <div class="seat col-9 g-3-c-6"></div>
+                    <div class="seat col-9 g-3-c-7"></div>
+                    <div class="seat col-9 g-3-c-8"></div>
+                    <div class="seat col-9 g-3-c-9"></div>
                 </div>
             </div>
             <div class="silver_seats mt-2 d-flex flex-column mt-3">
                 <div class="seat_row d-flex flex-row sil-row-1 mt-1">
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
+                    <div class="seat col-9 s-1-c-1"></div>
+                    <div class="seat col-9 s-1-c-2"></div>
+                    <div class="seat col-9 s-1-c-3"></div>
+                    <div class="seat col-9 s-1-c-4"></div>
+                    <div class="seat col-9 s-1-c-5"></div>
+                    <div class="seat col-9 s-1-c-6"></div>
+                    <div class="seat col-9 s-1-c-7"></div>
+                    <div class="seat col-9 s-1-c-8"></div>
+                    <div class="seat col-9 s-1-c-9"></div>
                 </div>
                 <div class="seat_row d-flex flex-row sil-row-2 mt-1">
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
-                    <div class="seat col-9"></div>
+                    <div class="seat col-9 s-2-c-1"></div>
+                    <div class="seat col-9 s-2-c-2"></div>
+                    <div class="seat col-9 s-2-c-3"></div>
+                    <div class="seat col-9 s-2-c-4"></div>
+                    <div class="seat col-9 s-2-c-5"></div>
+                    <div class="seat col-9 s-2-c-6"></div>
+                    <div class="seat col-9 s-2-c-7"></div>
+                    <div class="seat col-9 s-2-c-8"></div>
+                    <div class="seat col-9 s-2-c-9"></div>
                 </div>
             </div>
+            <div class="statement mt-4">You have selected tickets of worth $<span id="money">0</span></div>
+            <button type="submit" class="btn mt-5 btn-dark mx-auto" id="saveButton">Submit Options</button>
         </div>
     </div>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

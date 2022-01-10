@@ -1,66 +1,113 @@
-body{
-    margin:1px;
+body {
+    margin: 1px;
     background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
 }
 
-.seat{
+.seat {
     background-color: azure;
-    border-radius: 2rem 2rem 0 0 ;
-    height:0.8rem;
-    width:1rem;
+    border-radius: 2rem 2rem 0 0;
+    height: 0.8rem;
+    width: 1rem;
 }
 
 
-.seat_booking{
-    position:fixed;
-    top:50%;
+.seat_booking {
+    position: fixed;
+    top: 50%;
     left: 50%;
-    -webkit-transform:translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
 }
 
-.pickAMovie{
-    color:white;
+.pickAMovie {
+    color: white;
     font-size: 1rem;
 }
 
-.status{
+.status {
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 1.8rem;
     background-color: #29323c;
-    border-radius:0.3rem;
+    border-radius: 0.3rem;
     color: white;
     font-size: 0.8rem;
     padding: 0.3rem;
 }
 
-.input_box{
+.input_box {
     border-radius: 0.3rem;
     margin-left: 0.2rem;
-    width:max-content;
+    width: max-content;
+    text-decoration: none;
 }
 
-.Not_available, .Selected,.Occupied{
-    align-items: center;display: flex;
+.input_box:hover{
+    box-shadow: 0px 0px 2px 2px rgba(0, 255, 255, 0.719);
+
+}
+
+
+
+.Not_available,
+.Selected,
+.Occupied {
+    align-items: center;
+    display: flex;
     gap: 0.4rem;
 }
 
-.screen_window{
-  
-    border-top: 4rem solid white;
-	border-left: 0.5rem solid transparent;
-	border-right: 0.5rem solid transparent;
-    filter: drop-shadow(0 0 3.5px #fff);
-	width: 20rem;
+.Selected>.seat {
+    background-color: aqua;
 }
 
-.platinum_seats, .gold_seats, .silver_seats{
+.Occupied>.seat {
+    background-color: grey;
+}
+
+.screen_window {
+
+    border-top: 4rem solid white;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    filter: drop-shadow(0 0 3.5px #fff);
+    width: 20rem;
+}
+
+.platinum_seats,
+.gold_seats,
+.silver_seats {
     align-items: center;
 }
 
-.seat_row{
-    gap:0.2rem;
+.seat_row {
+    gap: 0.2rem;
 }
 
+
+.g-1-c-2,
+.g-1-c-8,
+.g-3-c-9,
+.p-2-c-4,
+.p-1-c-3 {
+    background-color: grey;
+}
+
+.seatsSelection .seat:hover {
+    box-shadow: 0 0 1px 1px #fff;
+}
+
+#saveButton{
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.statement{
+    color:white;
+}
+
+#money{
+    color: green;
+   
+}
